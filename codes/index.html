@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SportSphere — Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html" class="navbar-brand">
+            SportSphere 
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center gap-4">
+        <div class="d-flex gap-2">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="teams.html" class="nav-link">Teams</a>
+            <a href="fixtures.html" class="nav-link">Fixtures</a>
+            <a href="scoreboard.html" class="nav-link">Scoreboard</a>
+            <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <a id="navAuthBtn" href="login.html" class="btn btn-primary-custom">Login</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <main class="container">
+    
+    <section class="welcome-section">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="welcome-heading">Welcome to SportSphere</h1>
+          <p class="muted" style="font-size:1.1rem">Manage teams, schedule fixtures, update scores and view the leaderboard. (Cricket Edition)</p>
+        </div>
+        <div style="text-align:right">
+          <div class="small-note">Next Match</div>
+          <div class="score-badge">LQ vs KK • Mar 10</div>
+          <div class="muted small-note" style="margin-top:6px">Venue: Gaddafi Stadium</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero" style="margin-top:0; padding-top:0">
+      
+      <div style="flex:1">
+        
+        <div class="card-surface">
+          <h4 class="card-heading">Live Score</h4>
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <div id="scoreNow" style="font-weight:800; font-size:1.25rem">LQ 156/6 (20)</div>
+              <div class="muted small-note">Rohit (74) • Overs: 20</div>
+            </div>
+            <div>
+              <button id="simScoreBtn" class="btn btn-outline-custom">Simulate Update</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside style="width:300px">
+        <div class="card-surface">
+          <h6 class="card-heading">Top Players</h6>
+          <div style="display:flex;gap:12px;margin-top:8px">
+            <div style="text-align:center">
+              <img src="https://via.placeholder.com/56x56/0e7eb5/fff?text=AA" class="team-logo" />
+              <div class="muted">A. Player</div>
+              <div class="small-note">Runs: 423</div>
+            </div>
+            <div style="text-align:center">
+              <img src="https://via.placeholder.com/56x56/13a17a/fff?text=BB" class="team-logo" />
+              <div class="muted">B. Bowler</div>
+              <div class="small-note">Wkts: 12</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:20px" class="card-surface">
+        <h4 class="card-heading">Quick Actions</h4>
+        <div class="d-flex gap-2"> 
+            <a class="btn btn-primary-custom" href="teams.html">View Teams</a>
+            <a class="btn btn-outline-custom" href="fixtures.html">View Fixtures</a>
+            <a class="btn btn-outline-custom" href="leaderboard.html">View Leaderboard</a>
+        </div>
+    </section>
+
+
+    <section style="margin-top:20px" class="card-surface">
+      <h5 class="card-heading">Recent Fixtures</h5>
+      <div id="fixturesList" style="margin-top:12px"></div>
+    </section>
+
+    <footer class="site-footer">
+      SportSphere — A Web Technologies Project
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

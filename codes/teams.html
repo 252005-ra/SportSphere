@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SportSphere — Teams</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html" class="navbar-brand">
+            SportSphere 
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center gap-4">
+        <div class="d-flex gap-2">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="teams.html" class="nav-link">Teams</a>
+            <a href="fixtures.html" class="nav-link">Fixtures</a>
+            <a href="scoreboard.html" class="nav-link">Scoreboard</a>
+            <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <a id="navAuthBtn" href="login.html" class="btn btn-primary-custom">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page">
+    <div class="row-grid">
+      <div class="col-8">
+        <div class="card-surface">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h4 class="card-heading">Teams</h4>
+              <div class="muted small-note">Browse registered teams for the tournament</div>
+            </div>
+            <div>
+              <input id="teamSearch" class="search-input" placeholder="Search teams..." />
+            </div>
+          </div>
+
+          <div id="teamGrid" style="margin-top:14px; display:flex; flex-direction:column; gap:10px"></div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="card-surface">
+          <h5 class="card-heading">Actions</h5>
+          <div class="mt-2">
+            <button id="addTeamBtn" class="btn btn-primary-custom w-100" data-bs-toggle="modal" data-bs-target="#teamModalAdd">+ New Team</button>
+          </div>
+          <div style="margin-top:12px">
+            <h6 class="card-heading">Filters</h6>
+            <button class="btn btn-outline-custom w-100 mb-2" onclick="renderTeamsList()">All Teams</button>
+            <button class="btn btn-outline-custom w-100" onclick="filterTopTeams()">Top Teams</button>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="card-surface">
+          <h6 class="card-heading">Quick Info</h6>
+          <div class="muted small-note">This module showcases team cards and implements live search/filtering.
+  </div></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">SportSphere — Teams</footer>
+  </main>
+
+  <div class="modal fade" id="teamModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="teamModalLabel">Team Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="teamModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="teamModalAdd" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="teamForm" class="p-3">
+          <div class="modal-header">
+            <h5 class="modal-title">Add New Team</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div id="teamFormError" style="display:none;color:var(--color-danger);margin-bottom:10px"></div>
+            <div class="form-field">
+              <label>Team Name</label>
+              <input id="teamName" type="text" placeholder="e.g., Karachi Kings" />
+            </div>
+            <div class="form-field">
+              <label>Short Code</label>
+              <input id="teamShort" type="text" placeholder="e.g., KK" />
+            </div>
+            <div class="form-field">
+              <label>Logo URL (optional)</label>
+              <input id="teamLogo" type="text" placeholder="https://..." />
+            </div>
+            <div class="small-note">This demo saves teams in-memory for the prototype.</div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary-custom">Save Team</button>
+            <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
