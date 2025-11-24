@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SportSphere — Leaderboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.html" class="navbar-brand">
+            SportSphere 
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center gap-4">
+        <div class="d-flex gap-2">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="teams.html" class="nav-link">Teams</a>
+            <a href="fixtures.html" class="nav-link">Fixtures</a>
+            <a href="scoreboard.html" class="nav-link">Scoreboard</a>
+            <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <a id="navAuthBtn" href="login.html" class="btn btn-primary-custom">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page">
+    <div class="card-surface">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h4 class="card-heading">Leaderboard</h4>
+          <div class="muted small-note">Sort teams by points, wins, or NRR</div>
+        </div>
+        <div>
+          <select id="lbSort" class="select-sm">
+            <option value="points">Sort: Points</option>
+            <option value="wins">Sort: Wins</option>
+            <option value="nrr">Sort: NRR</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; overflow:auto">
+        <table class="table-leader" style="width:100%; border-radius:8px;">
+          <thead>
+            <tr style="background:var(--color-surface-alt)"><th style="padding:12px">#</th><th style="padding:12px">Team</th><th style="padding:12px">Played</th><th style="padding:12px">Won</th><th style="padding:12px">Lost</th><th style="padding:12px">Points</th><th style="padding:12px">NRR</th></tr>
+          </thead>
+          <tbody id="lbBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer class="site-footer">SportSphere — Leaderboard</footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
