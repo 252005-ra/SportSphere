@@ -1,0 +1,47 @@
+:root {
+  --primary-blue: #2189bd;
+  --bg-light: #f4f7f9;
+  --admin-gold: #ffc107;
+}
+
+/* Ensure Navbar stays the correct blue */
+.bg-primary-blue {
+  background-color: var(--primary-blue) !important;
+}
+
+/* Card Styling with specific blue top border */
+.sport-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-top: 4px solid var(--primary-blue);
+  position: relative; /* Base for positioning */
+  transition: all 0.3s ease;
+}
+
+/* Fix for overlapping: Move Edit button to a safer spot or use flex */
+.admin-edit-btn {
+  background-color: var(--admin-gold);
+  border: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.admin-edit-btn:hover {
+  background-color: #e0a800;
+}
+
+/* Navbar text visibility */
+.navbar-dark .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.admin-mode-badge {
+  background-color: var(--admin-gold);
+  color: #000;
+  font-weight: bold;
+}
